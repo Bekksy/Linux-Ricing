@@ -1,0 +1,242 @@
+/* =============================================================================
+ * Waybar CSS – angepasst an Ghibli-Abend-Wallpaper
+ * Ruhiger, warmer Stil mit Laternenakzenten
+ * ============================================================================= */
+
+/* Allgemeine Grundwerte */
+* {
+  color: #EADBB5;
+  border: 0;
+  padding: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12px;
+  transition: all 0.5s ease;
+}
+
+window#waybar {
+  background-color: rgba(20, 26, 32, 0.5);
+  border-bottom: 2px solid rgba(20, 26, 32, 0.7);
+}
+
+/* Workspaces */
+#workspaces {
+  border-style: solid;
+  opacity: 1;
+  border-radius: 7px;
+  margin: 5px 0 5px 7px;
+}
+
+#workspaces button:not(.active)*  {
+  color: #6fa04f; /* passiv */
+  border-radius: 50%;
+  margin: 0 1px;
+  padding: 2px 6px;
+}
+
+#workspaces button.empty {
+  color: #6fa04f;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces button.active *{
+  color: #dae4da; /* aktiv */
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+#workspaces button.visible {
+  color: #6fa04f;
+}
+
+
+
+/* Module Container */
+#clock,
+#custom-swap,
+#custom-clipboard,
+#custom-background,
+#custom-battery-sb,
+#battery,
+#cpu,
+#memory,
+#idle_inhibitor,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#mode,
+#mpd {
+  padding: 2px 6px;
+  border-style: solid;
+  background-color: rgba(34, 40, 46, 0.7);
+  opacity: 1;
+  margin: 5px 0;
+  border-radius: 6px;
+  color: #EADBB5;
+}
+
+/* Einzelne Module */
+#mode {
+  color: #FFDA91;
+  margin-right: 5px;
+}
+
+#mpd {
+  color: #FFDA91;
+  margin-left: 5px;
+  background-color: transparent;
+}
+
+#mpd.mpd-left,
+#mpd.mpd-center,
+#mpd.mpd-right {
+  background-color: rgba(20, 26, 32, 0.6);
+  font-size: 14px;
+}
+
+#mpd.mpd-left {
+  border-radius: 8px 0 0 8px;
+  margin: 5px 0 5px 3px;
+  padding: 4px 10px 4px 8px;
+}
+
+#mpd.mpd-center {
+  border-radius: 0;
+  margin: 5px 0;
+  padding: 4px;
+}
+
+#mpd.mpd-right {
+  border-radius: 0 8px 8px 0;
+  margin: 5px 0;
+  padding: 4px 8px 4px 10px;
+}
+
+#custom-swap {
+  border-radius: 8px;
+  color: #FFDA91;
+  margin-left: 8px;
+  background-color: rgba(34, 40, 46, 0.7);
+}
+
+#custom-background {
+  border-radius: 0 8px 8px 0;
+  background-color: rgba(34, 40, 46, 0.7);
+  color: #EADBB5;
+  padding: 3px 8px 4px 4px;
+}
+
+#clock {
+  color: #FFDA91;
+  border-radius: 8px;
+  margin: 6px 8px;
+}
+
+#backlight {
+  color: #F2B35E;
+  border-radius: 8px 0 0 8px;
+}
+
+#battery {
+  color: #EADBB5;
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
+}
+
+#battery.charging {
+  color: #FFDA91;
+}
+
+#battery.critical:not(.charging) {
+  color: #D94A38;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    color: #D94A38;
+  }
+}
+
+#cpu {
+  color: #EADBB5;
+}
+
+#memory {
+  color: #EADBB5;
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
+}
+
+#network {
+  color: #679289;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+#network.disabled,
+#network.disconnected {
+  color: #D94A38;
+}
+
+#pulseaudio {
+  color: #F2B35E;
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
+}
+
+#pulseaudio.muted {
+  color: #3b4252;
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
+}
+
+#temperature {
+  color: #94e2d5;
+  border-radius: 8px 0 0 8px;
+}
+
+#temperature.critical {
+  color: #D94A38;
+}
+
+#idle_inhibitor {
+  background-color: #F2B35E;
+  color: #1e1e2e;
+}
+
+/* Launcher & Power */
+#custom-launcher {
+  font-size: 15px;
+  background-color: rgba(255, 218, 145, 0.2);
+  color: #F2B35E;
+  border-radius: 0 8px 0 0;
+  padding: 3px 5px;
+}
+
+#custom-power {
+  font-size: 15px;
+  color: #7a9c63;
+  background-color: rgba(112, 163, 92, 0.2); /* #698f5a mit 20% Deckkraft */
+  border-radius: 8px 0 0 0;
+  padding: 5px 3px;
+}
+
+#custom-battery-sb {
+  color: #F2B35E;
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
+}
+
+#window {
+  border-style: hidden;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #EADBB5;
+}
